@@ -1,0 +1,8 @@
+# Scan output holds real hits against a real target. Never commit it.
+Dorks Outputs/
+*_output_*.json
+output.json
+
+.env
+__pycache__/
+*.pyc

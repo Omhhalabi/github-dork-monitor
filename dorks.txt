@@ -1,0 +1,39 @@
+# GitHub dork list — GitHub Code/Repo Search syntax, NOT Google.
+#
+# ONLY put assets you are authorised to test in here.
+#
+# One dork per line. '#' = comment, blank lines ignored.
+# Syntax: filename: extension: path: org: user: language: plus quoted keywords.
+# NOTE: GitHub does NOT support site: or inurl: — those are Google-only and
+# will come back as a 422 invalid query.
+#
+# Replace example.com / exampleapp.com / targetorg with your own scope.
+
+# --- Brand / domain keyword leaks (catch anything mentioning the estate) ---
+"example.com"
+"exampleapp.com"
+"targetbrand"
+
+# --- Secrets tied to the brand ---
+"example.com" password
+"exampleapp.com" password
+"targetbrand" api_key
+"targetbrand" secret
+"targetbrand" DB_PASSWORD
+"targetbrand" AWS_SECRET_ACCESS_KEY
+
+# --- Config / env files mentioning the brand ---
+filename:.env "targetbrand"
+filename:config "targetbrand"
+extension:json "targetbrand" api_key
+extension:yaml "targetbrand" password
+extension:sql "targetbrand"
+
+# --- Org / user scoped ---
+org:targetorg
+user:targetorg
+
+# --- Specific hostnames seen in recon ---
+"app.example.com"
+"portal.example.com"
+"api.example.com"
